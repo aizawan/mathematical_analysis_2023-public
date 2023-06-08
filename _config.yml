@@ -4,7 +4,7 @@
 title: 数理解析
 author: Hiroaki Aizawa
 copyright: "2022 (CC BY 4.0)"
-logo: logo.png
+logo: icon.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
