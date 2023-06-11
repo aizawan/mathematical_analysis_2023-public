@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="自習学習用の参考書・資料" href="advanced_materials.html" />
-    <link rel="prev" title="第1回: 数理解析の導入" href="notebooks/01_introduction.html" />
+    <link rel="prev" title="第5回: 課題ファイル" href="notebooks/exercises/05_first-order_linear_differential_equations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,6 +159,17 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">講義資料</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebooks/01_introduction.html">第1回: 数理解析の導入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/02_function_derivative_and_series_expansion.html">第2回: 関数，微積分，級数展開</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/03_differential_equations.html">第3回: 微分方程式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/04_first-order_ordinary_differential_equations.html">第4回: 一階常微分方程式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/05_first-order_linear_differential_equations.html">第5回: 一階線形微分方程式</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">課題ファイル</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks/exercises/02_function_derivative_and_series_expansion.html">第2回: 課題ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/exercises/03_differential_equations.html">第3回: 課題ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/exercises/04_first-order_ordinary_differential_equations.html">第4回: 課題ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/exercises/05_first-order_linear_differential_equations.html">第5回: 課題ファイル</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">補足情報</span></p>
 <ul class="current nav bd-sidenav">
@@ -360,8 +371,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">連絡先</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teams">Teams</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">スケジュール</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">評価方法</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">参考資料</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">課題</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">評価方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">参考資料</a></li>
 </ul>
             </nav>
         </div>
@@ -460,11 +472,21 @@ document.write(`
 </table>
 </section>
 <section id="id4">
-<h2>評価方法<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
-<p>成績は演習課題の提出状況および中間・期末レポートの総合点から評価します．</p>
+<h2>課題<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>不定期で課題を課します．課題内容は講義資料中に記載してあります．課題ファイルの作成方法やTeams上での提出はゼロから始めるプログラミングと同じです．<a class="reference external" href="https://ground-zero-programming.github.io/zero-pro2022-public/docs/submission/submission.html">課題提出方法ページ</a>を確認してください．</p>
+<p><strong>注意点</strong></p>
+<ul class="simple">
+<li><p>PDFファイルのみ受け付けます．<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>ファイルは提出しないでください．</p></li>
+<li><p>課題には手計算での課題が含まれます．このような課題の場合はMarkdownセル上で数式を記述してください．記述方法は「Markdown 数式」と検索するとわかりやすい日本語ページがヒットすると思うので参考にしてください．Google Colab上でも数式を入力できますし，VSCodeやNotion等のMarkdownエディタで作成してコピペしても良いです．写真等を貼り付けただけの提出は採点しません．</p></li>
+<li><p>答えのみの解答は採点しません．数式の途中式は省略しないでください．</p></li>
+</ul>
 </section>
 <section id="id5">
-<h2>参考資料<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2>評価方法<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p>成績は演習課題の提出状況および中間・期末レポートの総合点から評価します．</p>
+</section>
+<section id="id6">
+<h2>参考資料<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <p>本講義資料は以下の書籍を参考に作成されています．</p>
 <ul class="simple">
 <li><p>向谷博明, 下村哲, 相澤宏旭, “微分方程式（執筆中）”</p></li>
@@ -504,12 +526,12 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="notebooks/01_introduction.html"
+       href="notebooks/exercises/05_first-order_linear_differential_equations.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">第1回: 数理解析の導入</p>
+        <p class="prev-next-title">第5回: 課題ファイル</p>
       </div>
     </a>
     <a class="right-next"
@@ -542,8 +564,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">連絡先</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teams">Teams</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">スケジュール</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">評価方法</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">参考資料</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">課題</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">評価方法</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">参考資料</a></li>
 </ul>
   </nav></div>
 
