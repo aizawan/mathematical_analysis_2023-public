@@ -594,8 +594,8 @@ y(x) = \frac{x^2}{2} + C
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5bdde81c110f5b6d75ac9404b9ed87add85d3a8542d24b02a0d8fe2ca84b06b7.png" src="../_images/5bdde81c110f5b6d75ac9404b9ed87add85d3a8542d24b02a0d8fe2ca84b06b7.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f7ca3610790&gt;
+<img alt="../_images/8000b8fe4506a6a2252802dd9ed344b66ff860609e67c942a30c028107c7e702.png" src="../_images/8000b8fe4506a6a2252802dd9ed344b66ff860609e67c942a30c028107c7e702.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fcfe0602d60&gt;
 </pre></div>
 </div>
 </div>
@@ -634,10 +634,23 @@ y(x) = \frac{x^2}{2} + 1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0f961ffda72387dc0b21abb056304cfb04dc6357442ad7ec069576bdca526112.png" src="../_images/0f961ffda72387dc0b21abb056304cfb04dc6357442ad7ec069576bdca526112.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f7ca361e9a0&gt;
+<img alt="../_images/88fd526234e1355416bbc4c5311f9da3726307e9d8ba345ba3e7a688dcf5d8c0.png" src="../_images/88fd526234e1355416bbc4c5311f9da3726307e9d8ba345ba3e7a688dcf5d8c0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fcfe060f8e0&gt;
 </pre></div>
 </div>
+</div>
+</div>
+<p>第1回目の講義で少し話したように，上記のように<code class="docutils literal notranslate"><span class="pre">C</span></code>を手計算し代入することなく，初期条件を<code class="docutils literal notranslate"><span class="pre">dsolve</span></code>で与えて特殊解を導出することができる．初期条件は<code class="docutils literal notranslate"><span class="pre">ics</span></code>という引数で，<span class="math notranslate nohighlight">\(y(0)=1\)</span>，つまり，<code class="docutils literal notranslate"><span class="pre">y</span></code>の<code class="docutils literal notranslate"><span class="pre">x</span></code>に0を代入した時に値が1となるように与える．実際に<code class="docutils literal notranslate"><span class="pre">C</span></code>が初期条件の導出結果と一致することを確認されたい．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_</span> <span class="o">=</span> <span class="n">dsolve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ics</span><span class="o">=</span><span class="p">{</span><span class="n">y</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">):</span> <span class="mi">1</span><span class="p">})</span>
+<span class="n">x_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle y{\left(x \right)} = \frac{x^{2}}{2} + 1\]</div>
 </div>
 </div>
 </section>
@@ -763,7 +776,7 @@ y = \frac{x^3}{3} + x + C
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b540665c585cf0a8c980b57c968b0a73f17a0c7fbfdaa1be09a513d5ca2163fc.png" src="../_images/b540665c585cf0a8c980b57c968b0a73f17a0c7fbfdaa1be09a513d5ca2163fc.png" />
+<img alt="../_images/1d50241b5427c020e6fb71ae68757cb36365c5e332473770435a4f775df3d021.png" src="../_images/1d50241b5427c020e6fb71ae68757cb36365c5e332473770435a4f775df3d021.png" />
 </div>
 </div>
 </section>
