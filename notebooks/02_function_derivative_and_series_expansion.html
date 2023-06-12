@@ -684,8 +684,8 @@ f(x_1, x_2, x_3) = x_{1}^3 + x_{2}^2 + x_{3} + 1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4bb6765f4cc98b656a6e7e091a427a1f9c4242a18a8b8b89bb5b6be6088df2c1.png" src="../_images/4bb6765f4cc98b656a6e7e091a427a1f9c4242a18a8b8b89bb5b6be6088df2c1.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fa1023aa310&gt;
+<img alt="../_images/fb35e9f5fd9f95fd0062c720a20dff8fba0332168e97be5026d15051d4b668ed.png" src="../_images/fb35e9f5fd9f95fd0062c720a20dff8fba0332168e97be5026d15051d4b668ed.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fef122eabb0&gt;
 </pre></div>
 </div>
 </div>
@@ -706,7 +706,7 @@ f(x_1, x_2, x_3) = x_{1}^3 + x_{2}^2 + x_{3} + 1
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/05d5ed82f2cf595f3a8160a4a6ea7bd6b400d45e9ea2312a50f389020218d09a.png" src="../_images/05d5ed82f2cf595f3a8160a4a6ea7bd6b400d45e9ea2312a50f389020218d09a.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fa102493b20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fef122ea730&gt;
 </pre></div>
 </div>
 </div>
@@ -789,7 +789,7 @@ g = f(x') +  a (x - x')
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8aa905ece5ee843a884eae7979efc88a8b9205de6cde7415f44f648279ab7c25.png" src="../_images/8aa905ece5ee843a884eae7979efc88a8b9205de6cde7415f44f648279ab7c25.png" />
+<img alt="../_images/6969db113bcb7551a87c87bbabece7a12864ab343dad6cc8b6018e16c2dc931f.png" src="../_images/6969db113bcb7551a87c87bbabece7a12864ab343dad6cc8b6018e16c2dc931f.png" />
 </div>
 </div>
 </section>
@@ -816,10 +816,10 @@ y = 2x^2 + 1
 <p>多変数関数において，ある入力 <span class="math notranslate nohighlight">\(x_i\)</span> で微分することを <strong>偏微分 (partial differentiation)</strong> と呼ぶ．変数 <span class="math notranslate nohighlight">\(x,y\)</span> を入力として受け取る多変数関数 <span class="math notranslate nohighlight">\(f(x,y)\)</span> の偏微分は以下の式で与えられ，偏微分して得られる関数を <strong>偏導関数 (partial derivative)</strong> と呼ぶ．</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{array}{l}
-\frac{\partial f}{\partial x}(x, y)=\lim _{h \rightarrow 0} \frac{f(x+h, y)-f(x, y)}{h} \\
-\frac{\partial f}{\partial y}(x, y)=\lim _{h \rightarrow 0} \frac{f(x, y+h)-f(x, y)}{h}
-\end{array}
+\begin{align}
+\frac{\partial f}{\partial x}(x, y)&amp;=\lim_{h \rightarrow 0} \frac{f(x+h, y)-f(x, y)}{h} \\
+\frac{\partial f}{\partial y}(x, y)&amp;=\lim_{h \rightarrow 0} \frac{f(x, y+h)-f(x, y)}{h}
+\end{align}
 \end{split}\]</div>
 <p>偏微分を使うと，ある点で局面に接する平面，<strong>接平面(tangent plane)</strong> を書くことができる．そのために，<strong>勾配 (gradient)</strong> <span class="math notranslate nohighlight">\(\nabla_f\)</span> を定義する．</p>
 <div class="math notranslate nohighlight">
@@ -889,7 +889,7 @@ g(x, y) = f_x(a, b) (x - a) + f_y(a, b) (y - b) + f(a, b)
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/b77f5da27b83a3a759809f37697bd897fffaa8093f4f497fa6d360b02647bcf3.png" src="../_images/b77f5da27b83a3a759809f37697bd897fffaa8093f4f497fa6d360b02647bcf3.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fa102a2e8b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fef02c8e3d0&gt;
 </pre></div>
 </div>
 </div>
@@ -1014,10 +1014,13 @@ F(x) &amp;= \int_{-\infty}^{b} f(x) dx
 </section>
 <section id="id21">
 <h3>補足：関数の連続性<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h3>
-<p>関数が連続であるとは，極限 <span class="math notranslate nohighlight">\(\lim _{x \rightarrow a} f(x) \)</span> が　<span class="math notranslate nohighlight">\( f(a)\)</span> に一致すること，つまり，
-$<span class="math notranslate nohighlight">\(\lim _{x \rightarrow a} f(x) = f(a) \)</span><span class="math notranslate nohighlight">\(
-が成立するときに，関数 \)</span>f(x) <span class="math notranslate nohighlight">\( は点　\)</span>a$ で連続であると言う．</p>
-<p><span class="math notranslate nohighlight">\(a\)</span>を1に近づけたとき，<span class="math notranslate nohighlight">\(\lim _{x \rightarrow a} f(x) = f(a) \)</span>が成立するか検証する</p>
+<p>関数が連続であるとは，極限 <span class="math notranslate nohighlight">\(\lim_{x \rightarrow a} f(x)\)</span> が　<span class="math notranslate nohighlight">\(f(a)\)</span> に一致すること，つまり，</p>
+<div class="math notranslate nohighlight">
+\[
+\lim _{x \rightarrow a} f(x) = f(a)
+\]</div>
+<p>が成立するときに，関数 <span class="math notranslate nohighlight">\(f(x)\)</span> は点　<span class="math notranslate nohighlight">\(a\)</span> で連続であると言う．</p>
+<p><span class="math notranslate nohighlight">\(a\)</span> を1に近づけたとき，<span class="math notranslate nohighlight">\(\lim_{x \rightarrow a} f(x) = f(a)\)</span> が成立するか検証する</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">limit</span>
@@ -1089,8 +1092,8 @@ f(x) = f(a) + f'(a)(x-a) + \frac{f''(a)(x-a)^2}{2!} + \frac{f'''(a)(x-a)^3}{3!} 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/76c85c3c7a521260e7b1e49f12059b944f5f066c7c69ac080603709468549bc2.png" src="../_images/76c85c3c7a521260e7b1e49f12059b944f5f066c7c69ac080603709468549bc2.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fa0e03625b0&gt;
+<img alt="../_images/33f77d52d400375b640fc6ef189c8e472656498d4b0b13580413c22899262bbf.png" src="../_images/33f77d52d400375b640fc6ef189c8e472656498d4b0b13580413c22899262bbf.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7fef129d76d0&gt;
 </pre></div>
 </div>
 </div>
