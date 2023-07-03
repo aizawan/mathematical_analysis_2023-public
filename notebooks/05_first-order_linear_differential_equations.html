@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/05_first-order_linear_differential_equations';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="第2回: 課題ファイル" href="exercises/02_function_derivative_and_series_expansion.html" />
+    <link rel="next" title="第6回: 一階微分方程式" href="06_first-order_differential_equations.html" />
     <link rel="prev" title="第4回: 一階常微分方程式" href="04_first-order_ordinary_differential_equations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -165,6 +165,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="03_differential_equations.html">第3回: 微分方程式</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_first-order_ordinary_differential_equations.html">第4回: 一階常微分方程式</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">第5回: 一階線形微分方程式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_first-order_differential_equations.html">第6回: 一階微分方程式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_second-order_differential_equations.html">第7回: 二階微分方程式</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">課題ファイル</span></p>
 <ul class="nav bd-sidenav">
@@ -172,6 +174,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="exercises/03_differential_equations.html">第3回: 課題ファイル</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exercises/04_first-order_ordinary_differential_equations.html">第4回: 課題ファイル</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exercises/05_first-order_linear_differential_equations.html">第5回: 課題ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/06_first-order_differential_equations.html">第6回: 課題ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/07_second-order_differential_equations.html">第7回: 課題ファイル</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">補足情報</span></p>
 <ul class="nav bd-sidenav">
@@ -612,7 +616,7 @@ y &amp;= \pm e^{- \frac{x^2}{2} + C'} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fe38b63ba10b54cb6a617627a5849893535f83c982a6605b36b27fe7359f97b4.png" src="../_images/fe38b63ba10b54cb6a617627a5849893535f83c982a6605b36b27fe7359f97b4.png" />
+<img alt="../_images/d65ecf94a8dc016f46fff62f377087099ac0c07efd800685f6608ec51cf208ab.png" src="../_images/d65ecf94a8dc016f46fff62f377087099ac0c07efd800685f6608ec51cf208ab.png" />
 </div>
 </div>
 </section>
@@ -751,7 +755,7 @@ y = Ce^{-x} + x - 1
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
-\int y e^{\int p(x) dx} dx &amp;= \int q(x)e^{\int p(x) dx} dx \\
+\int \frac{d}{dx} y e^{\int p(x) dx} dx &amp;= \int q(x)e^{\int p(x) dx} dx \\
 y e^{\int p(x) dx} + C' &amp;= \int q(x)e^{\int p(x) dx} dx\\
 y &amp;= e^{-\int p(x) dx} \left ( \int q(x)e^{\int p(x) dx} dx + C \right) 
 \end{align}
@@ -1005,7 +1009,7 @@ y &amp;= y_1 + y_2 \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01c0c975f52236d80d23558cdc8c7ab5ceeb8b5a8cb94409baeedf164fcefbef.png" src="../_images/01c0c975f52236d80d23558cdc8c7ab5ceeb8b5a8cb94409baeedf164fcefbef.png" />
+<img alt="../_images/4929de9a42a7bd119b8baaf3cabd7c85afd3cba08f3cc84494fef905f7c33608.png" src="../_images/4929de9a42a7bd119b8baaf3cabd7c85afd3cba08f3cc84494fef905f7c33608.png" />
 </div>
 </div>
 </section>
@@ -1057,11 +1061,11 @@ y &amp;= y_1 + y_2 \\
       </div>
     </a>
     <a class="right-next"
-       href="exercises/02_function_derivative_and_series_expansion.html"
+       href="06_first-order_differential_equations.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">第2回: 課題ファイル</p>
+        <p class="prev-next-title">第6回: 一階微分方程式</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
