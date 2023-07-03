@@ -12,6 +12,7 @@ parts:
       - file: notebooks/04_first-order_ordinary_differential_equations
       - file: notebooks/05_first-order_linear_differential_equations
       - file: notebooks/06_first-order_differential_equations
+      - file: notebooks/07_second-order_differential_equations
 
   - caption: 課題ファイル
     chapters:
@@ -20,7 +21,8 @@ parts:
       - file: notebooks/exercises/04_first-order_ordinary_differential_equations
       - file: notebooks/exercises/05_first-order_linear_differential_equations
       - file: notebooks/exercises/06_first-order_differential_equations
-
+      - file: notebooks/exercises/07_second-order_differential_equations
+  
   - caption: 補足情報
     chapters:
       - file: info.md
