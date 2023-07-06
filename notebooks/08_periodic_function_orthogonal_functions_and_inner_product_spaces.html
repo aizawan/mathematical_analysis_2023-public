@@ -1,0 +1,1308 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>第8回: 周期関数，直交関数系，内積空間 &#8212; 数理解析</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/08_periodic_function_orthogonal_functions_and_inner_product_spaces';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="第2回: 課題ファイル" href="exercises/02_function_derivative_and_series_expansion.html" />
+    <link rel="prev" title="第7回: 二階微分方程式" href="07_second-order_differential_equations.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/icon.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/icon.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    数理解析（Mathematical Analysis）
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">講義資料</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_introduction.html">第1回: 数理解析の導入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_function_derivative_and_series_expansion.html">第2回: 関数，微積分，級数展開</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_differential_equations.html">第3回: 微分方程式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_first-order_ordinary_differential_equations.html">第4回: 一階常微分方程式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_first-order_linear_differential_equations.html">第5回: 一階線形微分方程式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_first-order_differential_equations.html">第6回: 一階微分方程式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_second-order_differential_equations.html">第7回: 二階微分方程式</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">第8回: 周期関数，直交関数系，内積空間</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">課題ファイル</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="exercises/02_function_derivative_and_series_expansion.html">第2回: 課題ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/03_differential_equations.html">第3回: 課題ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/04_first-order_ordinary_differential_equations.html">第4回: 課題ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/05_first-order_linear_differential_equations.html">第5回: 課題ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/06_first-order_differential_equations.html">第6回: 課題ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/07_second-order_differential_equations.html">第7回: 課題ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/08_periodic_function_orthogonal_functions_and_inner_product_spaces.html">第8回: 課題ファイル</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">補足情報</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../info.html">講義情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_materials.html">自習学習用の参考書・資料</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/aizawan/mathematical_analysis_2023-public/blob/main/notebooks/08_periodic_function_orthogonal_functions_and_inner_product_spaces.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/aizawan/mathematical_analysis_2023-public" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/aizawan/mathematical_analysis_2023-public/issues/new?title=Issue%20on%20page%20%2Fnotebooks/08_periodic_function_orthogonal_functions_and_inner_product_spaces.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/08_periodic_function_orthogonal_functions_and_inner_product_spaces.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>第8回: 周期関数，直交関数系，内積空間</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">概要</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">フーリエ級数展開</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">周期関数</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Pythonによる実装</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">最小二乗法</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Pythonによる実装</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">直交関数系</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">ベクトルの直交</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">関数の直交</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">内積空間</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">課題</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">次回の講義について</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>第8回: 周期関数，直交関数系，内積空間<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<section id="id2">
+<h2>概要<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>第8回の講義では，微分方程式の開放としてのフーリエ変換・ラプラス変換の理解のために，周期関数，直交関数系，内積空間を学ぶ．ここでは，フーリエ級数展開の式の復習から周期関数をおさらいし，関数の近似を直交関数の重ね合わせで表現する方法を学ぶ．そして，最後に直交関数近似を理解するために関数の内積について定義する．具体的には以下の項目の理解が目的となる．</p>
+<ul class="simple">
+<li><p>周期関数の定義と性質を復習する．</p></li>
+<li><p>近似表現として直交関数系による関数近似を学ぶ．</p></li>
+<li><p>関数の内積を定義する．</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>フーリエ級数展開<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>第一回目の講義でも簡単に紹介したが初めに <strong>フーリエ級数展開</strong> を紹介する．フーリエ級数展開は関数 <span class="math notranslate nohighlight">\(f(x)\)</span> を <span class="math notranslate nohighlight">\(\sin\)</span>関数と<span class="math notranslate nohighlight">\(\cos\)</span>関数の足し合わせで近似する方法であり，以下で与えられる．</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+f(x) \sim  a_0 + \sum_{n=1}^{\infty} (a_n \cos nx + b_n \sin nx)
+\end{align}
+\]</div>
+<p>ここで，<span class="math notranslate nohighlight">\(a_0, a_n, b_n\)</span>は以下で与えられる．</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+a_{0}&amp;=\frac{1}{2 \pi} \int_{-\pi}^{\pi} f(x) dx \\
+a_{n}&amp;=\frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos nx dx \quad(n=1,2,3 \cdots) \\
+b_{n}&amp;=\frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin n x d x \quad(n=1,2,3 \cdots)
+\end{align}
+\end{split}\]</div>
+<p>複雑な式が現れたが，「関数 <span class="math notranslate nohighlight">\(f(x)\)</span> を <span class="math notranslate nohighlight">\(\sin\)</span>関数と<span class="math notranslate nohighlight">\(\cos\)</span>関数の足し合わせ」で表現することを確認されたい．係数<span class="math notranslate nohighlight">\(a_0, a_n, b_n\)</span>はひとまず無視して，一番上の式を展開してみると，<span class="math notranslate nohighlight">\(\sin\)</span>波と<span class="math notranslate nohighlight">\(\cos\)</span>波の足し算であることがわかる．</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) \sim a_0 + a_1 \cos x + b_1 \sin x + a_2 \cos 2x + b_2 \sin 2x + \cdots
+\]</div>
+<p>フーリエ解析（<span class="math notranslate nohighlight">\(\fallingdotseq\)</span>フーリエ級数展開）のポイントは複雑な関数を単純な関数（<span class="math notranslate nohighlight">\(\sin\)</span>波と<span class="math notranslate nohighlight">\(\cos\)</span>波）に分解することで複雑な関数の特性を知ることができること，また，単純な関数の組み合わせで複雑な関数を合成することにある．本講義ではこの単純な関数の足し合わせについて深掘りしていく．</p>
+</section>
+<section id="id4">
+<h2>周期関数<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>これもまた復習となるが上記のフーリエ級数展開で登場した<span class="math notranslate nohighlight">\(\sin\)</span>関数と<span class="math notranslate nohighlight">\(\cos\)</span>関数は <strong>正弦波</strong> とも呼ばれ，この正弦波は同じ波が一定間隔で繰り返される <strong>周期関数</strong> である．このとき波が繰り返される一定間隔のことを <strong>周期</strong> と呼ぶ．周期を正の定数 <span class="math notranslate nohighlight">\(T\)</span> として，周期関数 <span class="math notranslate nohighlight">\(f\)</span> は</p>
+<div class="math notranslate nohighlight">
+\[
+f(x+T) = f(x)
+\]</div>
+<p>という性質を持つ．<span class="math notranslate nohighlight">\(\sin\)</span>関数と<span class="math notranslate nohighlight">\(\cos\)</span>関数もまた周期 <span class="math notranslate nohighlight">\(T=2\pi\)</span> の周期関数であり，三角関数の性質から，</p>
+<div class="math notranslate nohighlight">
+\[
+\sin(x+2\pi) = \sin(x), \quad \cos(x+2\pi) = \cos(x)
+\]</div>
+<p>となるのは自明である．<span class="math notranslate nohighlight">\(\sin\)</span>関数と<span class="math notranslate nohighlight">\(\cos\)</span>関数の周期 <span class="math notranslate nohighlight">\(T=2\pi\)</span> のようにこの周期関数の性質を満たす最小の正の定数のことを <strong>基本周期</strong> と言う．<span class="math notranslate nohighlight">\(2T, 3T, ...\)</span>も周期関数の性質を満たすので周期と言えるが，これらの違いについて注意されたい．フーリエ解析ではこの周期関数による関数の近似が重要なポイントとなる．</p>
+<section id="python">
+<h3>Pythonによる実装<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h3>
+<p>では，<span class="math notranslate nohighlight">\(\sin\)</span>関数と<span class="math notranslate nohighlight">\(\cos\)</span>関数の周期関数としての性質をsympyで確認し，プロットしてみよう．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">pi</span>
+<span class="kn">from</span> <span class="nn">sympy.plotting</span> <span class="kn">import</span> <span class="n">plot</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">)</span>
+
+<span class="n">f_sin</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">T</span><span class="p">)</span>
+<span class="n">f_cos</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">T</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">f_sin</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">),</span> <span class="n">f_cos</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">pi</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/50c013062f01fb5e5e2a154dc37a843209a03a7d027dfa318fe3a2c5181b4237.png" src="../_images/50c013062f01fb5e5e2a154dc37a843209a03a7d027dfa318fe3a2c5181b4237.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7ff588780550&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h2>最小二乗法<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p>続いて，フーリエ級数展開における周期関数の足し合わせによる関数の近似を理解するために <strong>最小二乗法</strong> を紹介する．最小二乗法では，データを与えられそのデータをよく表現する関数を求める <strong>関数近似</strong> を行う．関数近似によってデータの背後に潜む関係性を関数として捉えることができれば，データ間の対応関係や未知のデータに対する予測が可能となる．</p>
+<p>例えば，以下のように何らかのデータを取得したとしよう．プログラムとしては，<span class="math notranslate nohighlight">\(y=2x+1\)</span>の関係が背後に潜むノイズの乗ったデータを擬似的に生成している．matplotlibを使って生成したデータ（青色の点）とその背後に潜む関係性（赤色の直線）をプロットしている．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">x_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span> <span class="c1"># xの値</span>
+<span class="n">y_gt</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x_data</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># y=2x+1の真の値</span>
+<span class="n">y_data</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x_data</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_data</span><span class="p">))</span> <span class="c1"># 一定のノイズがのった観測データ</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_gt</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff57a574070&gt;]
+</pre></div>
+</div>
+<img alt="../_images/627bea205be1d0c6d5e4e97e2c5de58cd558db344ad7f8e3755e7323c01f8e1b.png" src="../_images/627bea205be1d0c6d5e4e97e2c5de58cd558db344ad7f8e3755e7323c01f8e1b.png" />
+</div>
+</div>
+<p>関数近似の目的は，<span class="math notranslate nohighlight">\(x\)</span> を入力値，<span class="math notranslate nohighlight">\(y\)</span> を <span class="math notranslate nohighlight">\(x\)</span> に対応する目標値としたとき，<span class="math notranslate nohighlight">\(N\)</span> 個のデータ <span class="math notranslate nohighlight">\(\{(x_i,y_i)\}_{i=1}^N\)</span> からデータの背後に潜む赤色の関係性を求めることである．しかしながら，利用できるデータはここでは <code class="docutils literal notranslate"><span class="pre">x_data</span></code> と <code class="docutils literal notranslate"><span class="pre">y_data</span></code> のみであり，関係性に関する情報（関数の形など）は未知である．</p>
+<p>そこで最小二乗法では，<span class="math notranslate nohighlight">\(N\)</span> 個のデータ <span class="math notranslate nohighlight">\(\{(x_i,y_i)\}_{i=1}^N\)</span> を与えられ，<span class="math notranslate nohighlight">\(n\)</span>個のの関数の値 <span class="math notranslate nohighlight">\(\phi_{k}(x)\)</span> とその係数 <span class="math notranslate nohighlight">\(c_k\)</span> との定数倍の和で表現される関数を考える（<span class="math notranslate nohighlight">\(k=1,...,n\)</span>）</p>
+<div class="math notranslate nohighlight">
+\[
+y_{\alpha} \approx \sum_{k=1}^{n} c_{k} \phi_{k}\left(x_{\alpha}\right), \alpha=1, \ldots, N
+\]</div>
+<p>この関数が成立するような係数 <span class="math notranslate nohighlight">\(c_1,...,c_n\)</span> を求めることがゴールであり，これらの係数は以下の最小化問題から求めることができる．</p>
+<div class="math notranslate nohighlight">
+\[
+J=\frac{1}{2} \sum_{\alpha=1}^{N}\left(y_{\alpha}-\sum_{k=1}^{n} c_{k} \phi_{k}\left(x_{\alpha}\right)\right)^{2} \rightarrow \min
+\]</div>
+<div class="admonition- admonition">
+<p class="admonition-title">線型結合</p>
+<p>前述の定数倍の和で表される第一式は係数 <span class="math notranslate nohighlight">\(c\)</span> と関数 <span class="math notranslate nohighlight">\(\phi\)</span> の値の足し合わせ（<strong>線型結合</strong>）になっていることが以下のように展開するとわかる．</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+y_{\alpha} &amp;\approx \sum_{k=1}^{n} c_{k} \phi_{k}\left(x_{\alpha}\right) \\
+&amp;=c_{1} \phi_{1}\left(x_{\alpha}\right) + c_{2} \phi_{2}\left(x_{\alpha}\right) + \cdots
+\end{align}
+\end{split}\]</div>
+<p>上記の例のように直線で近似することを考えると，<span class="math notranslate nohighlight">\(\{\phi_1, \phi_2, c_1, c_2\}=\{1,x,b,a\}\)</span> とすれば，上記の式は，<span class="math notranslate nohighlight">\(y_{\alpha} \approx ax_{\alpha}+b\)</span> となり，直線の方程式 <span class="math notranslate nohighlight">\(y=ax+b\)</span> の係数 <span class="math notranslate nohighlight">\(a,b\)</span> をデータから求める問題になっていることがわかる．さらに，<span class="math notranslate nohighlight">\(\{\phi_1, \phi_2, \phi_3, c_1, c_2, c_3\}=\{1,x,x^2, c, b,a\}\)</span> とすれば，二次関数 <span class="math notranslate nohighlight">\(y_{\alpha} \approx ax_{\alpha}^{2}+bx_{\alpha} + c\)</span> で関数を近似することとなる．</p>
+<p>ここまで考えると，<span class="math notranslate nohighlight">\(\{\phi_1, \phi_2, \phi_3\}=\{1,\cos{x},\sin{x}\}, \{c_1, c_2, c_3\}=\{a_0, a_1, b_1\}\)</span> とすれば，<span class="math notranslate nohighlight">\(y_{\alpha} \approx a_0 + a_1 \cos{x_{\alpha}} + b_1 \sin{x_{\alpha}}\)</span> となり，最小二乗法からフーリエ級数展開の式が書けそうなのがイメージできるかと思う．</p>
+</div>
+<p>では，係数 <span class="math notranslate nohighlight">\(c_k\)</span> を求める最小化問題を深掘りする．二つ目のシグマを展開してみると，</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+J&amp;=\frac{1}{2} \sum_{\alpha=1}^{N}\left(y_{\alpha}-\left ( c_{1} \phi_{1}\left(x_{\alpha}\right) + c_{2} \phi_{2}\left(x_{\alpha}\right) + \cdots \right )\right)^{2}
+\end{align}
+\]</div>
+<p>となり，係数 <span class="math notranslate nohighlight">\(c\)</span> をもつ関数 <span class="math notranslate nohighlight">\(\phi\)</span> の線形結合の式と <span class="math notranslate nohighlight">\(y_{\alpha}\)</span>￼との差の計算をしていることがわかる．そして残ったシグマも展開してみると，</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+J= &amp;\frac{1}{2} \left ( \left(y_{1}-\left ( c_{1} \phi_{1}\left(x_{1}\right) + c_{2} \phi_{2}\left(x_{1}\right) + \cdots \right )\right)^{2} \right. \\ 
+&amp; \left. + \left(y_{2}-\left ( c_{1} \phi_{1}\left(x_{2}\right) + c_{2} \phi_{2}\left(x_{2}\right) + \cdots \right )\right)^{2} + \cdots \right )
+\end{align}
+\end{split}\]</div>
+<p>となり，すべてのデータの差を足していることがわかる．つまりはデータを表現する関数 <span class="math notranslate nohighlight">\(\phi\)</span> は固定で <span class="math notranslate nohighlight">\(c\)</span> の値を変化させて関数と実際に観測されたデータの値との差（=<span class="math notranslate nohighlight">\(J\)</span>）をできるだけ小さくする問題を考えているのである．そして，<span class="math notranslate nohighlight">\(J\)</span>を小さくする<span class="math notranslate nohighlight">\(c\)</span>を求める方法はこれまで最小値の問題を解いてきた時と同じように関数の傾きを考え，傾きが<span class="math notranslate nohighlight">\(0\)</span>となる点を求めれば良い．ただし，今回は <span class="math notranslate nohighlight">\(J\)</span> は多変数関数なので偏微分を考える必要がある．</p>
+<p><span class="math notranslate nohighlight">\(J\)</span> を <span class="math notranslate nohighlight">\(c_i\)</span> で偏微分したときの偏導関数を求める（慣れるまではシグマを展開して偏微分すると良い）．</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial J}{\partial c_i}= \sum_{\alpha=1}^{N}\left(y_{\alpha}-\sum_{k=1}^{n} c_{k} \phi_{k}\left(x_{\alpha}\right)\right)\left ( - \phi_{i} \left(x_{\alpha}\right) \right )
+\]</div>
+<p>そして，全ての係数 <span class="math notranslate nohighlight">\(c_1,...,c_n\)</span> の偏導関数について以下の方程式を解く．</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial J}{\partial c_1}=0, \cdots, \frac{\partial J}{\partial c_n}=0
+\]</div>
+<p>この連立方程式を解くために <strong>正規方程式</strong> と呼ばれる行列で表現される形に書き換える．まず求めたい <span class="math notranslate nohighlight">\(c\)</span> について偏導関数を整理する．</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\frac{\partial J}{\partial c_i} &amp;= \sum_{\alpha=1}^{N}\left(y_{\alpha}-\sum_{k=1}^{n} c_{k} \phi_{k}\left(x_{\alpha}\right)\right)\left ( - \phi_{i} \left(x_{\alpha}\right) \right ) \\
+&amp;=- \sum_{\alpha=1}^{N} y_{\alpha} \phi_{i} \left(x_{\alpha}\right) + \sum_{k=1}^{n} \left ( \sum_{\alpha=1}^{N}  \phi_{k}\left(x_{\alpha}\right) \phi_{i} \left(x_{\alpha}\right) \right ) c_{k}
+\end{align}
+\end{split}\]</div>
+<p>ここで，<span class="math notranslate nohighlight">\( \partial J / \partial c_i = 0 \)</span> より，</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{k=1}^{n} \left ( \sum_{\alpha=1}^{N}  \phi_{k}\left(x_{\alpha}\right) \phi_{i} \left(x_{\alpha}\right) \right ) c_{k} = \sum_{\alpha=1}^{N} y_{\alpha} \phi_{i} \left(x_{\alpha}\right)
+\]</div>
+<p>となる．これをすべての係数で並べてみると，</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left\{\begin{matrix}
+\sum_{k=1}^{n} \left ( \sum_{\alpha=1}^{N}  \phi_{k}\left(x_{\alpha}\right) \phi_{1} \left(x_{\alpha}\right) \right ) c_{k} = \sum_{\alpha=1}^{N} y_{\alpha} \phi_{1} \left(x_{\alpha}\right)\\ 
+\sum_{k=1}^{n} \left ( \sum_{\alpha=1}^{N}  \phi_{k}\left(x_{\alpha}\right) \phi_{2} \left(x_{\alpha}\right) \right ) c_{k} = \sum_{\alpha=1}^{N} y_{\alpha} \phi_{2} \left(x_{\alpha}\right)\\ 
+\vdots \\
+\sum_{k=1}^{n} \left ( \sum_{\alpha=1}^{N}  \phi_{k}\left(x_{\alpha}\right) \phi_{n} \left(x_{\alpha}\right) \right ) c_{k} = \sum_{\alpha=1}^{N} y_{\alpha} \phi_{n} \left(x_{\alpha}\right)\\ 
+\end{matrix}\right.
+\end{split}\]</div>
+<p>となり，以下のように行列の形で書き直すことができる．</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+\sum_{\alpha=1}^{N} \phi_{1}\left(x_{\alpha}\right) \phi_{1}\left(x_{\alpha}\right) &amp; \sum_{\alpha=1}^{N} \phi_{1}\left(x_{\alpha}\right) \phi_{2}\left(x_{\alpha}\right) &amp; \cdots &amp; \sum_{\alpha=1}^{N} \phi_{1}\left(x_{\alpha}\right) \phi_{n}\left(x_{\alpha}\right) \\
+\sum_{\alpha=1}^{N} \phi_{2}\left(x_{\alpha}\right) \phi_{1}\left(x_{\alpha}\right) &amp; \sum_{\alpha=1}^{N} \phi_{2}\left(x_{\alpha}\right) \phi_{2}\left(x_{\alpha}\right) &amp; \cdots &amp; \sum_{\alpha=1}^{N} \phi_{2}\left(x_{\alpha}\right) \phi_{n}\left(x_{\alpha}\right) \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\sum_{\alpha=1}^{N} \phi_{n}\left(x_{\alpha}\right) \phi_{1}\left(x_{\alpha}\right) &amp; \sum_{\alpha=1}^{N} \phi_{n}\left(x_{\alpha}\right) \phi_{2}\left(x_{\alpha}\right) &amp; \cdots &amp; \sum_{\alpha=1}^{N} \phi_{n}\left(x_{\alpha}\right) \phi_{n}\left(x_{\alpha}\right)
+\end{pmatrix}
+\begin{pmatrix}
+c_1\\ 
+c_2\\ 
+\vdots\\ 
+c_n
+\end{pmatrix}
+=
+\begin{pmatrix}
+\sum_{\alpha=1}^{N} \phi_{1}\left(x_{\alpha}\right) y_{\alpha} \\
+\sum_{\alpha=1}^{N} \phi_{2}\left(x_{\alpha}\right) y_{\alpha} \\
+\vdots \\
+\sum_{\alpha=1}^{N} \phi_{n}\left(x_{\alpha}\right) y_{\alpha}
+\end{pmatrix}
+\end{split}\]</div>
+<p>この方程式を解けば係数 <span class="math notranslate nohighlight">\(c\)</span> を求めることができ，最小二乗法による関数近似を実現できる．</p>
+<div class="admonition- admonition">
+<p class="admonition-title">行列への変換</p>
+<p>2つ以上のシグマを含む偏導関数を行列の形式へ変換するのはやや慣れが必要かもしれない．初めのうちは以下のようにシグマを展開して考えてみると良い（<span class="math notranslate nohighlight">\(c_1\)</span>の偏導関数の展開）．</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}c_{1} \sum_{\alpha=1}^{N} \phi_{1}\left(x_{\alpha}\right) \phi_{1} \left(x_{\alpha}\right) +
+c_{2} \sum_{\alpha=1}^{N} \phi_{2}\left(x_{\alpha}\right) \phi_{1} \left(x_{\alpha}\right) +
+\cdots +
+c_{n} \sum_{\alpha=1}^{N} \phi_{n}\left(x_{\alpha}\right) \phi_{1} \left(x_{\alpha}\right)\\= \sum_{\alpha=1}^{N} y_{\alpha} \phi_{1} \left(x_{\alpha}\right)\end{aligned}\end{align} \]</div>
+<p>正規方程式の行列計算で偏導関数が表現できていることが確認できると思う．</p>
+</div>
+<section id="id6">
+<h3>Pythonによる実装<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p>では，先ほど作成した <code class="docutils literal notranslate"><span class="pre">x_data</span></code> と <code class="docutils literal notranslate"><span class="pre">y_data</span></code> から最小二乗法を実装してみる．今回は以下の線型結合で表される式，</p>
+<div class="math notranslate nohighlight">
+\[
+y_{\alpha} \approx \sum_{k=1}^{n} c_{k} \phi_{k}\left(x_{\alpha}\right), \alpha=1, \ldots, N
+\]</div>
+<p>について，前述したように，<span class="math notranslate nohighlight">\(\{\phi_1, \phi_2, c_1, c_2\}=\{1,x,b,a\}\)</span> として一次関数</p>
+<div class="math notranslate nohighlight">
+\[y_{\alpha} \approx ax_{\alpha}+b\]</div>
+<p>を考える．このとき <span class="math notranslate nohighlight">\(N\)</span> はデータ数．つまり <code class="docutils literal notranslate"><span class="pre">x_data.shape[0]</span></code>としたときの値である．まずは <span class="math notranslate nohighlight">\(N\)</span> を確認する．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">x_data</span></code> を作成したときの <code class="docutils literal notranslate"><span class="pre">N</span></code> と一致していることを確認されたい．続いて，式をsympyで定義していく．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span> <span class="c1"># y_data が格納される正解用の y</span>
+<span class="n">y_</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;y_&#39;</span><span class="p">)</span> <span class="c1"># 近似後の y_alpha が格納される y_</span>
+
+<span class="n">y_</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">b</span> <span class="c1"># 関数を定義</span>
+<span class="n">y_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a x + b\]</div>
+</div>
+</div>
+<p>続いて，<span class="math notranslate nohighlight">\(J\)</span> を定義する．numpy表記のように書けるのでプログラムは簡単に書ける</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">J</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">J</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \frac{\left(- a x - b + y\right)^{2}}{2}\]</div>
+</div>
+</div>
+<p>今回，係数は <span class="math notranslate nohighlight">\(a\)</span>と<span class="math notranslate nohighlight">\(b\)</span>である．これらのパラメータに対する偏導関数<span class="math notranslate nohighlight">\(\frac{\partial J}{\partial a}, \frac{\partial J}{\partial b}\)</span>を定義する．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">diff</span>
+<span class="n">J_a</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">J</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">J_a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - x \left(- a x - b + y\right)\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">J_b</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">J</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">J_b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle a x + b - y\]</div>
+</div>
+</div>
+<p>得られた偏導関数について，各データを代入して方程式を得る．具体的には次の式の計算を各係数<span class="math notranslate nohighlight">\(a,b\)</span>について行っている．</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{\alpha=1}^{N} y_{\alpha} \phi_{i} \left(x_{\alpha}\right) + \sum_{k=1}^{n} \left ( \sum_{\alpha=1}^{N}  \phi_{k}\left(x_{\alpha}\right) \phi_{i} \left(x_{\alpha}\right) \right ) c_{k}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sum_a</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">J_a</span><span class="o">.</span><span class="n">subs</span><span class="p">([(</span><span class="n">x</span><span class="p">,</span> <span class="n">_x</span><span class="p">),</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">_y</span><span class="p">)])</span> <span class="k">for</span> <span class="n">_x</span><span class="p">,</span> <span class="n">_y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span><span class="p">)])</span>
+<span class="n">sum_a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 10.1724137931034 a + 15.0 b - 35.8784323464263\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sum_b</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">J_b</span><span class="o">.</span><span class="n">subs</span><span class="p">([(</span><span class="n">x</span><span class="p">,</span> <span class="n">_x</span><span class="p">),</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">_y</span><span class="p">)])</span> <span class="k">for</span> <span class="n">_x</span><span class="p">,</span> <span class="n">_y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span><span class="p">)])</span>
+<span class="n">sum_b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 15.0 a + 30 b - 61.1541980282752\]</div>
+</div>
+</div>
+<p>得られた連立方程式を <code class="docutils literal notranslate"><span class="pre">solve</span></code> を使って解いて係数<span class="math notranslate nohighlight">\(a,b\)</span>を求める．行っている計算は正規方程式を解いているのと同じである．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">solve</span>
+<span class="n">coef</span> <span class="o">=</span> <span class="n">solve</span><span class="p">([</span><span class="n">sum_a</span><span class="p">,</span> <span class="n">sum_b</span><span class="p">],</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">])</span>
+<span class="n">coef</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{a: 1.98372473079190, b: 1.04661090221322}
+</pre></div>
+</div>
+</div>
+</div>
+<p>得られた係数<span class="math notranslate nohighlight">\(a,b\)</span>が実際の値に近いことがわかる．実際にプロットもしてみる</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">coef</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">*</span> <span class="n">x_data</span> <span class="o">+</span> <span class="n">coef</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_gt</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff58ad5b400&gt;]
+</pre></div>
+</div>
+<img alt="../_images/90fa477424c64d4d790eff58ef3aee2a44e7a88d250ccfe844511061ca27802e.png" src="../_images/90fa477424c64d4d790eff58ef3aee2a44e7a88d250ccfe844511061ca27802e.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="id7">
+<h2>直交関数系<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<p>正規方程式からパラメータ <span class="math notranslate nohighlight">\(c_k\)</span> を求めることができたが，関数 <span class="math notranslate nohighlight">\(\phi\)</span> を自身以外との積が <span class="math notranslate nohighlight">\(0\)</span> となるように関数の集合 <span class="math notranslate nohighlight">\(\{ \phi_{i}(x) \}^{n}_{i=1}\)</span> を設計するとさらに計算が簡単になる．この自身以外との積が <span class="math notranslate nohighlight">\(0\)</span> となるような性質を <strong>直交性</strong> と言い，以下で定義される．</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{\alpha=1}^{N} \phi_{i}\left(x_{\alpha}\right) \phi_{j}\left(x_{\alpha}\right) = 0, \qquad i \neq j
+\]</div>
+<p>そして，直交性を持つ関数の集合を <strong>直交関数系</strong> と言う．</p>
+<p>直交関数系で関数 <span class="math notranslate nohighlight">\(\phi\)</span> を設計したときの正規方程式を考えると，自身以外との積が <span class="math notranslate nohighlight">\(0\)</span> となるので正規方程式の非対角成分が <span class="math notranslate nohighlight">\(0\)</span> となるのは明らかである．</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+\sum_{\alpha=1}^{N} \phi_{1}\left(x_{\alpha}\right) \phi_{1}\left(x_{\alpha}\right) &amp; &amp; &amp; \\
+&amp; \sum_{\alpha=1}^{N} \phi_{2}\left(x_{\alpha}\right) \phi_{2}\left(x_{\alpha}\right) &amp; &amp; \\
+&amp;  &amp; \ddots &amp;  \\
+&amp;  &amp;  &amp; \sum_{\alpha=1}^{N} \phi_{n}\left(x_{\alpha}\right) \phi_{n}\left(x_{\alpha}\right)
+\end{pmatrix}
+\begin{pmatrix}
+c_1\\ 
+c_2\\ 
+\vdots\\ 
+c_n
+\end{pmatrix}
+=
+\begin{pmatrix}
+\sum_{\alpha=1}^{N} \phi_{1}\left(x_{\alpha}\right) y_{\alpha} \\
+\sum_{\alpha=1}^{N} \phi_{2}\left(x_{\alpha}\right) y_{\alpha} \\
+\vdots \\
+\sum_{\alpha=1}^{N} \phi_{n}\left(x_{\alpha}\right) y_{\alpha}
+\end{pmatrix}
+\end{split}\]</div>
+<p>つまりは各成分 <span class="math notranslate nohighlight">\(c_i\)</span> は以下の式から容易に計算できる．</p>
+<div class="math notranslate nohighlight">
+\[
+c_i = \frac{\sum_{\alpha=1}^{N} \phi_{i} \left(x_{\alpha}\right) y_{\alpha}}{\sum_{\alpha=1}^{N}  \phi_{i}\left(x_{\alpha}\right)^2 }, \qquad i=1,...,n
+\]</div>
+<section id="id8">
+<h3>ベクトルの直交<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<p>正規方程式は自身以外との積が <span class="math notranslate nohighlight">\(0\)</span> となるように関数を設計することで簡単に解くことができたが，近似対象が<span class="math notranslate nohighlight">\(N\)</span> 個の離散データ <span class="math notranslate nohighlight">\(\{(x_i,y_i)\}_{i=1}^N\)</span> ではなくベクトルや関数そのものであったときどのように最小二乗法や直交性を考えるべきかをここで紹介する．</p>
+<p>そもそも <strong>直交する</strong> という表現はこれまでベクトルで登場したかと思う．具体的には，<span class="math notranslate nohighlight">\(m\)</span>次元のベクトル <span class="math notranslate nohighlight">\(\mathbf{a}, \mathbf{b}\)</span> の内積が <span class="math notranslate nohighlight">\(0\)</span> であるときこれらのベクトルは直交していると習ったはずだ．</p>
+<div class="math notranslate nohighlight">
+\[
+\left (\mathbf{a}, \mathbf{b} \right ) = \sum_{i=1}^m a_i b_i = a_1 b_1 + \cdots + a_m b_m = 0
+\]</div>
+<p>そして，ベクトルが直交するとは二つのベクトルが成す角が<span class="math notranslate nohighlight">\(90°\)</span>であった．このベクトルの直交性は，ベクトルを最小二乗法で近似する場合に直接利用することもできる．</p>
+<p>以下にベクトルの最小二乗法についてまとめた．クリックすると確認できる．</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">ベクトルの最小二乗法と直交性</p>
+<p>先ほどの離散データにおける最小二乗法と同様に，<span class="math notranslate nohighlight">\(m\)</span> 次元列ベクトル <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> を <span class="math notranslate nohighlight">\(n\)</span> 本の任意の￼<span class="math notranslate nohighlight">\(m\)</span> 次元ベクトル <span class="math notranslate nohighlight">\(\{ \mathbf{u}_i \}^n_{i=1}\)</span> の線形結合で表現する最小二乗法を考える．このときのベクトルの線型結合は</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\mathbf{a} &amp;\approx \sum_{k=1}^{n} c_{k} \mathbf{u}_k \\
+&amp;=c_1 \mathbf{u}_1 + c_2 \mathbf{u}_2 + \cdots c_n \mathbf{u}_n
+\end{align}
+\end{split}\]</div>
+<p>として表され，最小二乗法としてすべての成分を均一に近似するように最小化問題を考えることができる．</p>
+<div class="math notranslate nohighlight">
+\[
+J = \frac{1}{2} \left \| \mathbf{a} - \sum^{n}_{k=1} c_k \mathbf{u}_k \right \|^2 \rightarrow min
+\]</div>
+<p>同じく，関数 <span class="math notranslate nohighlight">\(J\)</span> についてその偏導関数が <span class="math notranslate nohighlight">\(0\)</span> となるように係数 <span class="math notranslate nohighlight">\(\{ c_i \}^n_{i=1}\)</span> を求める．偏導関数は以下であり，</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial J}{\partial c_i} = -\left ( \mathbf{a}, \mathbf{u}_i \right ) + \sum_{k=1}^{n} c_k \left (\mathbf{u}_k, \mathbf{u}_i \right )
+\]</div>
+<p>正規方程式は以下となる．</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+\left \| \mathbf{u}_1\right \| &amp;
+\left ( \mathbf{u}_1, \mathbf{u}_2 \right ) &amp;
+\cdots &amp;
+\left ( \mathbf{u}_1, \mathbf{u}_n \right ) \\
+\left ( \mathbf{u}_2, \mathbf{u}_1 \right ) &amp;
+\left \| \mathbf{u}_2 \right \|  &amp;
+\cdots &amp;
+\left ( \mathbf{u}_2, \mathbf{u}_n \right ) \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\left ( \mathbf{u}_n, \mathbf{u}_1 \right ) &amp;
+\left ( \mathbf{u}_n, \mathbf{u}_2 \right ) &amp;
+\cdots &amp;
+\left \| \mathbf{u}_n \right \| 
+\end{pmatrix}
+\begin{pmatrix}
+c_1\\ 
+c_2\\ 
+\vdots\\ 
+c_n
+\end{pmatrix}
+=
+\begin{pmatrix}
+\left ( \mathbf{a}, \mathbf{u}_1 \right ) \\
+\left ( \mathbf{a}, \mathbf{u}_2 \right ) \\
+\vdots \\
+\left ( \mathbf{a}, \mathbf{u}_n \right )
+\end{pmatrix}
+\end{split}\]</div>
+<p>ここでも自身との内積が <span class="math notranslate nohighlight">\(0\)</span> となるような列ベクトルの集合 <span class="math notranslate nohighlight">\(\{ \mathbf{u}_i \}^n_{i=1}\)</span> であると，以下のように正規方程式の非対角成分は <span class="math notranslate nohighlight">\(0\)</span> となり，</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+\left \| \mathbf{u}_1\right \| &amp;
+&amp;
+&amp;
+\\
+&amp;
+\left \| \mathbf{u}_2 \right \|  &amp;
+&amp;
+\\
+&amp;&amp; \ddots &amp; \\
+&amp;
+&amp;
+&amp;
+\left \| \mathbf{u}_n \right \| 
+\end{pmatrix}
+\begin{pmatrix}
+c_1\\ 
+c_2\\ 
+\vdots\\ 
+c_n
+\end{pmatrix}
+=
+\begin{pmatrix}
+\left ( \mathbf{a}, \mathbf{u}_1 \right ) \\
+\left ( \mathbf{a}, \mathbf{u}_2 \right ) \\
+\vdots \\
+\left ( \mathbf{a}, \mathbf{u}_n \right )
+\end{pmatrix}
+\end{split}\]</div>
+<p>各係数 <span class="math notranslate nohighlight">\(c_i\)</span> は簡単に計算できる．</p>
+<div class="math notranslate nohighlight">
+\[
+c_i = \frac{\left (\mathbf{a}, \mathbf{u}_i \right )}{\left \| \mathbf{u}_i \right \|^ 2}, \qquad i=1,\ldots n
+\]</div>
+<p>ここからさらに，<span class="math notranslate nohighlight">\(\mathbf{u}\)</span> を直交かつ単位ベクトルとなるように設計することを考える．</p>
+<div class="math notranslate nohighlight">
+\[
+\left \| \mathbf{u}_i \right \| = 1, \qquad i=1,\ldots,n
+\]</div>
+<p>このように <span class="math notranslate nohighlight">\(\{ \mathbf{u}_i \}^n_{i=1}\)</span> のすべての要素が単位ベクトルであるとき <strong>正規直交系</strong> と呼び，<span class="math notranslate nohighlight">\(c_i\)</span>の解はさらにシンプルになる．</p>
+<div class="math notranslate nohighlight">
+\[
+c_i = \left (\mathbf{a}, \mathbf{u}_i \right ), \qquad i=1,\ldots n
+\]</div>
+<div class="admonition- admonition">
+<p class="admonition-title">ベクトルのノルム</p>
+<p>ベクトルのノルムは内積を用いて以下で定義される．</p>
+<div class="math notranslate nohighlight">
+\[
+\left \| \mathbf{a} \right \| = \sqrt{\left ( \mathbf{a}, \mathbf{a} \right )} = \sqrt{\sum^{m}_{i=1} a_i^2}
+\]</div>
+</div>
+<div class="admonition- admonition">
+<p class="admonition-title">偏導関数の導出</p>
+<p><span class="math notranslate nohighlight">\(\partial J / \partial c_i\)</span>の式変形についてまとめたので参考にされたい．</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\frac{\partial J}{\partial c_i} &amp;= \frac{\partial}{\partial c_i} \left \{ \frac{1}{2} \left \| \mathbf{a} - \sum^{n}_{k=1} c_k \mathbf{u}_k \right \|^2 \right \} \\
+&amp;=\frac{\partial}{\partial c_i} \left \{ \frac{1}{2} \left ( \mathbf{a} - \sum^{n}_{k=1} c_k \mathbf{u}_k, \mathbf{a} - \sum^{n}_{l=1} c_l \mathbf{u}_l \right ) \right \} \\
+&amp;=\frac{\partial}{\partial c_i} \left \{ \frac{1}{2} \left ( \left ( \mathbf{a}, \mathbf{a} \right ) - 2 \left ( \mathbf{a}, \sum^{n}_{k=1} c_k \mathbf{u}_k  \right ) + \left ( \sum^{n}_{k=1} c_k \mathbf{u}_k, \sum^{n}_{l=1} c_l \mathbf{u}_l \right )\right ) \right \} \\
+&amp;=\frac{\partial}{\partial c_i} \left \{ \frac{1}{2} \left (\left \| \mathbf{a} \right \| ^2 - 2 \sum^{n}_{k=1} c_k \left ( \mathbf{a}, \mathbf{u}_k  \right ) + \sum^{n}_{k=1} \sum^{n}_{l=1} c_k c_l \left ( \mathbf{u}_k, \mathbf{u}_l \right )\right ) \right \} \\
+&amp;=-\left ( \mathbf{a}, \mathbf{u}_i \right ) + \sum_{k=1}^{n} c_k \left (\mathbf{u}_k, \mathbf{u}_i \right )
+\end{align}
+\end{split}\]</div>
+</div>
+</div>
+</section>
+<section id="id9">
+<h3>関数の直交<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<p>離散データとベクトルで直交を定義し，正規方程式からの最小二乗法を導出したのと同様に関数に対しても直交を定義することができる．</p>
+<p>区間<span class="math notranslate nohighlight">\([a,b]\)</span>で関数<span class="math notranslate nohighlight">\(f(x), g(x)\)</span>が以下のとき関数が直交するという．</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{a}^{b}\ f(x) g(x) dx= 0
+\]</div>
+<p>そして，関数の集合 <span class="math notranslate nohighlight">\(\{\phi_i(x)\}^n_{i=0}\)</span> が互いに直交するとき，区間 <span class="math notranslate nohighlight">\([a,b]\)</span> 上の直交関数系であるという．</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{a}^{b}\ \phi_{i}\left(x\right) \phi_{j}\left(x\right) dx= 0, \qquad i \neq j
+\]</div>
+<p>この関数の直交性を利用してベクトルと同様に関数の最小二乗法を考えることもできる．</p>
+<p>以下に関数の最小二乗法についてまとめた．クリックすると確認できる．</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">関数の最小二乗法と直交性</p>
+<p>区間 <span class="math notranslate nohighlight">\([a,b]\)</span> において，任意の関数 <span class="math notranslate nohighlight">\(f(x)\)</span> を￼<span class="math notranslate nohighlight">\(n\)</span> 個の関数 <span class="math notranslate nohighlight">\(\{ \phi_i(x) \}^n_{i=1}\)</span> の線形結合</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+f(x) &amp;\approx \sum_{k=1}^{n} c_{k} \phi_{k}(x)\\
+&amp;=c_1 \phi_{1}(x)+c_2 \phi_{2}(x) + \cdots c_n \phi_n(x)
+\end{align}
+\end{split}\]</div>
+<p>で表現する．ベクトルの場合と同様に，区間 <span class="math notranslate nohighlight">\([a,b]\)</span> 上のすべての点 <span class="math notranslate nohighlight">\(x\)</span> で均一に近似するように次の最小化問題を考える．</p>
+<div class="math notranslate nohighlight">
+\[
+J = \frac{1}{2} \int_{a}^{b} \left ( f \left ( x \right ) - \sum_{n}^{k=1} c_{k} \phi_{k}\left ( x \right ) \right ) ^ 2 dx \rightarrow min
+\]</div>
+<p>同じく，関数 <span class="math notranslate nohighlight">\(J\)</span> についてその偏導関数が <span class="math notranslate nohighlight">\(0\)</span> となるように係数 <span class="math notranslate nohighlight">\(\{ c_i \}^n_{i=1}\)</span> を求める．偏導関数は以下であり，</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\frac{\partial J}{\partial c_i} &amp;= -\int_{a}^{b} \left(f \left ( x \right ) - \sum_{k=1}^{n} c_{k} \phi_{k} \left(x \right) \right)  \phi_{i} \left( x \right) dx \\
+&amp;= \sum_{k=1}^{n} c_k \int_{a}^{b} \phi_k \left ( x \right ) \phi_i \left ( x \right ) dx 
+- \int_{a}^{b} f \left ( x \right ) \phi_i \left ( x \right ) dx\\
+\end{align}
+\end{split}\]</div>
+<p>正規方程式は以下のように定まる．</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+\int_{a}^{b} \phi_{1} \left ( x \right ) ^2 dx &amp;
+\int_{a}^{b} \phi_{1} \left ( x \right ) \phi_{2} \left ( x \right ) dx &amp;
+\cdots &amp;
+\int_{a}^{b} \phi_{1} \left ( x \right ) \phi_{n} \left ( x \right ) dx \\
+\int_{a}^{b} \phi_{2} \left ( x \right ) \phi_{1} \left ( x \right ) dx &amp;
+\int_{a}^{b} \phi_{2} \left ( x \right ) ^2 dx &amp;
+\cdots &amp;
+\int_{a}^{b} \phi_{2} \left ( x \right ) \phi_{n} \left ( x \right ) dx \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\int_{a}^{b} \phi_{n} \left ( x \right ) \phi_{1} \left ( x \right ) dx &amp;
+\int_{a}^{b} \phi_{n} \left ( x \right ) \phi_{2} \left ( x \right ) dx &amp;
+\cdots &amp;
+\int_{a}^{b} \phi_{n} \left ( x \right ) ^2 dx
+\end{pmatrix}
+\begin{pmatrix}
+c_1\\ 
+c_2\\ 
+\vdots\\ 
+c_n
+\end{pmatrix}
+=
+\begin{pmatrix}
+\int_{a}^{b} \phi_{1} \left ( x \right ) f \left ( x \right ) dx \\
+\int_{a}^{b} \phi_{2} \left ( x \right ) f \left ( x \right ) dx \\
+\vdots \\
+\int_{a}^{b} \phi_{n} \left ( x \right ) f \left ( x \right ) dx
+\end{pmatrix}
+\end{split}\]</div>
+<p>前述した関数の直交性より直交関数系 <span class="math notranslate nohighlight">\(\{ \phi_{i}(x) \}^{n}_{i=1}\)</span> を設計すると，関数の場合も，正規方程式の非対角成分は <span class="math notranslate nohighlight">\(0\)</span> となり，</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+\int_{a}^{b} \phi_{1} \left ( x \right )^2 dx &amp;
+&amp;
+&amp;
+\\
+&amp;
+\int_{a}^{b} \phi_{2} \left ( x \right )^2 dx &amp;
+&amp;
+\\
+&amp;&amp; \ddots &amp;\\
+&amp;
+&amp;
+&amp;
+\int_{a}^{b} \phi_{n} \left ( x \right )^2 dx
+\end{pmatrix}
+\begin{pmatrix}
+c_1\\ 
+c_2\\ 
+\vdots\\ 
+c_n
+\end{pmatrix}
+=
+\begin{pmatrix}
+\int_{a}^{b} \phi_{1} \left ( x \right ) f \left ( x \right ) dx \\
+\int_{a}^{b} \phi_{2} \left ( x \right ) f \left ( x \right ) dx \\
+\vdots \\
+\int_{a}^{b} \phi_{n} \left ( x \right ) f \left ( x \right ) dx
+\end{pmatrix}
+\end{split}\]</div>
+<p>各係数は簡単に計算できる．</p>
+<div class="math notranslate nohighlight">
+\[
+c_i = \frac{\int_{a}^{b} \phi_{i} \left ( x \right ) f \left ( x \right) dx }{\int_{a}^{b} \phi_{i} \left ( x \right )^2 dx }, \qquad i=1,...,n
+\]</div>
+<div class="admonition- admonition">
+<p class="admonition-title">偏導関数の導出</p>
+<p><span class="math notranslate nohighlight">\(\partial J / \partial c_i\)</span>の式変形についてまとめたので参考にされたい．</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\frac{\partial J}{\partial c_i} &amp;= -\int_{a}^{b} \left(f \left ( x \right ) - \sum_{k=1}^{n} c_{k} \phi_{k} \left(x \right) \right)  \phi_{i} \left( x \right) dx \\
+&amp;=-\int_{a}^{b} f \left ( x \right ) \phi_{i} \left( x \right) dx + \int_{a}^{b} \sum_{k=1}^{n} c_{k} \phi_{k} \left(x \right)   \phi_{i} \left( x \right) dx \\
+&amp;= \sum_{k=1}^{n} \int_{a}^{b} c_k \phi_k \left ( x \right ) \phi_i \left ( x \right ) dx 
+- \int_{a}^{b} f \left ( x \right ) \phi_i \left ( x \right ) dx\\
+&amp;= \sum_{k=1}^{n} c_k \int_{a}^{b} \phi_k \left ( x \right ) \phi_i \left ( x \right ) dx 
+- \int_{a}^{b} f \left ( x \right ) \phi_i \left ( x \right ) dx\\
+\end{align}
+\end{split}\]</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id10">
+<h2>内積空間<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<p>ここまで離散データ，ベクトル，関数と直交性（自身以外との内積が<span class="math notranslate nohighlight">\(0\)</span>）について説明してきたが，そもそもベクトル以外の対象に内積を行うことに対して不自然さを感じた方もいるかと思う．ここでは内積演算が満たすべき条件（<strong>内積の公理</strong>）を紹介し，ベクトルだけでなく離散データや関数が内積の公理を満たした内積演算をしていることを確認する．</p>
+<p>線形空間の元 <span class="math notranslate nohighlight">\(\mathbf{u}, \mathbf{v} \in \mathcal{L}\)</span> について以下を満たすとき内積 <span class="math notranslate nohighlight">\((\mathbf{u}, \mathbf{v})\)</span> が定義される．</p>
+<ul>
+<li><p>内積の正値性</p>
+<div class="math notranslate nohighlight">
+\[
+    (\mathbf{u}, \mathbf{u}) \geq 0
+    \]</div>
+</li>
+<li><p>内積の対称性</p>
+<div class="math notranslate nohighlight">
+\[
+    (\mathbf{u}, \mathbf{v}) = (\mathbf{v}, \mathbf{u})
+    \]</div>
+</li>
+<li><p>内積の線形性</p>
+<div class="math notranslate nohighlight">
+\[
+    (c_1 \mathbf{u}_1 + c_2 \mathbf{u}_2, \mathbf{v}) = c_1 (\mathbf{u}, \mathbf{v}) + c_2 (\mathbf{u}, \mathbf{v})
+    \]</div>
+</li>
+</ul>
+<p>上記の3つの条件（内積の公理）を満たす演算は <strong>内積</strong> となる．</p>
+<p>加えて，内積が定義できるとノルムも定まる．</p>
+<div class="math notranslate nohighlight">
+\[
+\left \| \mathbf{u} \right \| = \sqrt{\left ( \mathbf{u}, \mathbf{u} \right )}
+\]</div>
+<p>内積とノルムが定義された線形空間を計量空間 <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> と呼ぶ．計量空間の任意の元 <span class="math notranslate nohighlight">\(\mathbf{u}, \mathbf{v} \in \mathcal{L}\)</span> の内積が <span class="math notranslate nohighlight">\(0\)</span> となるとき（<span class="math notranslate nohighlight">\((\mathbf{u}, \mathbf{v}) = 0\)</span>），これらの元 は <strong>直交する</strong> という</p>
+<section id="id11">
+<h3>課題<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<p><strong>課題1:</strong> 最小二乗法の説明において，<span class="math notranslate nohighlight">\(N\)</span> 個の離散データ <span class="math notranslate nohighlight">\(\{x_\alpha \}^N_{\alpha=1}\)</span> が与えられ，関数 <span class="math notranslate nohighlight">\(f(x), g(x)\)</span> に対して，内積とノルムは次のように定義されていた．</p>
+<p>内積：</p>
+<div class="math notranslate nohighlight">
+\[
+\left (f,g \right ) = \sum_{\alpha=1}^N f \left(x_\alpha \right) g \left(x_\alpha \right)
+\]</div>
+<p>ノルム：</p>
+<div class="math notranslate nohighlight">
+\[
+\left \| f \right \| = \sqrt{\left (f,f\right )} = \sqrt{\sum^{N}_{\alpha=1} f \left (x_\alpha\right )^2}
+\]</div>
+<p>この演算が内積の公理を満たすことを確かめよ．</p>
+<p><strong>課題2:</strong> <span class="math notranslate nohighlight">\(n\)</span> 次元列ベクトル <span class="math notranslate nohighlight">\(\mathbf{a}, \mathbf{b}\)</span> の内積とノルムは次のように定義されていた．</p>
+<p>内積：</p>
+<div class="math notranslate nohighlight">
+\[
+\left (\mathbf{a}, \mathbf{b} \right ) = \sum_{i=1}^n a_i b_i
+\]</div>
+<p>ノルム：</p>
+<div class="math notranslate nohighlight">
+\[
+\left \| \mathbf{a} \right \| = \sqrt{\left ( \mathbf{a}, \mathbf{a} \right )} = \sqrt{\sum^{n}_{i=1} a_i^2}
+\]</div>
+<p>この演算が内積の公理を満たすことを確かめよ．</p>
+<p><strong>課題３:</strong> 区間 <span class="math notranslate nohighlight">\([a,b]\)</span> 上の連続関数 <span class="math notranslate nohighlight">\(f(x), g(x)\)</span> に対して内積とノルムは次のように定義されていた．</p>
+<p>内積：</p>
+<div class="math notranslate nohighlight">
+\[
+\left ( f, g \right ) = \int_{a}^{b} f\left(x\right) g\left(x\right) dx
+\]</div>
+<p>ノルム：</p>
+<div class="math notranslate nohighlight">
+\[
+\left \| \mathbf{f} \right \| = \sqrt{\left ( f, f  \right )} = \sqrt{ \int_{a}^{b} f\left(x\right) ^2 dx}
+\]</div>
+<p>この演算が内積の公理を満たすことを確かめよ．</p>
+</section>
+</section>
+<section id="id12">
+<h2>次回の講義について<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
+<p>ここまで離散データ，ベクトル，関数と最小二乗法の近似対象の一般化を行った．その理由としては次回以降の講義で紹介するがフーリエ級数展開で登場する <span class="math notranslate nohighlight">\(\sin\)</span>関数と<span class="math notranslate nohighlight">\(\cos\)</span>関数は区間<span class="math notranslate nohighlight">\([-\pi,\pi]\)</span>で直交する直交関数系であり，最小二乗法と密接に関係するからである．次回の講義ではこの性質を踏まえて，フーリエ級数展開を導出したい．</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="07_second-order_differential_equations.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">第7回: 二階微分方程式</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="exercises/02_function_derivative_and_series_expansion.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">第2回: 課題ファイル</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">概要</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">フーリエ級数展開</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">周期関数</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Pythonによる実装</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">最小二乗法</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Pythonによる実装</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">直交関数系</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">ベクトルの直交</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">関数の直交</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">内積空間</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">課題</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">次回の講義について</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Hiroaki Aizawa
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022 (CC BY 4.0).
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
