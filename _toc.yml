@@ -14,6 +14,7 @@ parts:
       - file: notebooks/06_first-order_differential_equations
       - file: notebooks/07_second-order_differential_equations
       - file: notebooks/08_periodic_function_orthogonal_functions_and_inner_product_spaces
+      - file: notebooks/09_fourier_series_expansion
 
   - caption: 課題ファイル
     chapters:
@@ -24,6 +25,7 @@ parts:
       - file: notebooks/exercises/06_first-order_differential_equations
       - file: notebooks/exercises/07_second-order_differential_equations
       - file: notebooks/exercises/08_periodic_function_orthogonal_functions_and_inner_product_spaces
+      - file: notebooks/exercises/09_fourier_series_expansion
   
   - caption: 補足情報
     chapters:
