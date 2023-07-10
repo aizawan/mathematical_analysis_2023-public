@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/08_periodic_function_orthogonal_functions_and_inner_product_spaces';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="第2回: 課題ファイル" href="exercises/02_function_derivative_and_series_expansion.html" />
+    <link rel="next" title="第9回: フーリエ級数展開" href="09_fourier_series_expansion.html" />
     <link rel="prev" title="第7回: 二階微分方程式" href="07_second-order_differential_equations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -168,6 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="06_first-order_differential_equations.html">第6回: 一階微分方程式</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_second-order_differential_equations.html">第7回: 二階微分方程式</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">第8回: 周期関数，直交関数系，内積空間</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_fourier_series_expansion.html">第9回: フーリエ級数展開</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">課題ファイル</span></p>
 <ul class="nav bd-sidenav">
@@ -178,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="exercises/06_first-order_differential_equations.html">第6回: 課題ファイル</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exercises/07_second-order_differential_equations.html">第7回: 課題ファイル</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exercises/08_periodic_function_orthogonal_functions_and_inner_product_spaces.html">第8回: 課題ファイル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises/09_fourier_series_expansion.html">第9回: 課題ファイル</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">補足情報</span></p>
 <ul class="nav bd-sidenav">
@@ -505,8 +507,8 @@ f(x+T) = f(x)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/50c013062f01fb5e5e2a154dc37a843209a03a7d027dfa318fe3a2c5181b4237.png" src="../_images/50c013062f01fb5e5e2a154dc37a843209a03a7d027dfa318fe3a2c5181b4237.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7ff588780550&gt;
+<img alt="../_images/39bc52cc606d962e90b69a348002d4e7acf24c4aec4f2356abff9dc619241889.png" src="../_images/39bc52cc606d962e90b69a348002d4e7acf24c4aec4f2356abff9dc619241889.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f98318fae80&gt;
 </pre></div>
 </div>
 </div>
@@ -534,10 +536,10 @@ f(x+T) = f(x)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff57a574070&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9821ffb100&gt;]
 </pre></div>
 </div>
-<img alt="../_images/627bea205be1d0c6d5e4e97e2c5de58cd558db344ad7f8e3755e7323c01f8e1b.png" src="../_images/627bea205be1d0c6d5e4e97e2c5de58cd558db344ad7f8e3755e7323c01f8e1b.png" />
+<img alt="../_images/faad256b16ddf1b75c01b1166e087eed836365d7c5ad8d6ebe2e3d64afa50173.png" src="../_images/faad256b16ddf1b75c01b1166e087eed836365d7c5ad8d6ebe2e3d64afa50173.png" />
 </div>
 </div>
 <p>関数近似の目的は，<span class="math notranslate nohighlight">\(x\)</span> を入力値，<span class="math notranslate nohighlight">\(y\)</span> を <span class="math notranslate nohighlight">\(x\)</span> に対応する目標値としたとき，<span class="math notranslate nohighlight">\(N\)</span> 個のデータ <span class="math notranslate nohighlight">\(\{(x_i,y_i)\}_{i=1}^N\)</span> からデータの背後に潜む赤色の関係性を求めることである．しかしながら，利用できるデータはここでは <code class="docutils literal notranslate"><span class="pre">x_data</span></code> と <code class="docutils literal notranslate"><span class="pre">y_data</span></code> のみであり，関係性に関する情報（関数の形など）は未知である．</p>
@@ -743,7 +745,7 @@ y_{\alpha} \approx \sum_{k=1}^{n} c_{k} \phi_{k}\left(x_{\alpha}\right), \alpha=
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 10.1724137931034 a + 15.0 b - 35.8784323464263\]</div>
+\[\displaystyle 10.1724137931034 a + 15.0 b - 35.0067994521669\]</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -755,7 +757,7 @@ y_{\alpha} \approx \sum_{k=1}^{n} c_{k} \phi_{k}\left(x_{\alpha}\right), \alpha=
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle 15.0 a + 30 b - 61.1541980282752\]</div>
+\[\displaystyle 15.0 a + 30 b - 59.4844696927108\]</div>
 </div>
 </div>
 <p>得られた連立方程式を <code class="docutils literal notranslate"><span class="pre">solve</span></code> を使って解いて係数<span class="math notranslate nohighlight">\(a,b\)</span>を求める．行っている計算は正規方程式を解いているのと同じである．</p>
@@ -768,7 +770,7 @@ y_{\alpha} \approx \sum_{k=1}^{n} c_{k} \phi_{k}\left(x_{\alpha}\right), \alpha=
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{a: 1.98372473079190, b: 1.04661090221322}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{a: 1.96996611056172, b: 0.997832601142832}
 </pre></div>
 </div>
 </div>
@@ -785,10 +787,10 @@ y_{\alpha} \approx \sum_{k=1}^{n} c_{k} \phi_{k}\left(x_{\alpha}\right), \alpha=
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff58ad5b400&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f98329349d0&gt;]
 </pre></div>
 </div>
-<img alt="../_images/90fa477424c64d4d790eff58ef3aee2a44e7a88d250ccfe844511061ca27802e.png" src="../_images/90fa477424c64d4d790eff58ef3aee2a44e7a88d250ccfe844511061ca27802e.png" />
+<img alt="../_images/71d9f23e4b221427f20d99c33778fb4e1c04788ccda6d78036cf4f178d503688.png" src="../_images/71d9f23e4b221427f20d99c33778fb4e1c04788ccda6d78036cf4f178d503688.png" />
 </div>
 </div>
 </section>
@@ -1108,7 +1110,7 @@ c_i = \frac{\int_{a}^{b} \phi_{i} \left ( x \right ) f \left ( x \right) dx }{\i
 <li><p>内積の線形性</p>
 <div class="math notranslate nohighlight">
 \[
-    (c_1 \mathbf{u}_1 + c_2 \mathbf{u}_2, \mathbf{v}) = c_1 (\mathbf{u}, \mathbf{v}) + c_2 (\mathbf{u}, \mathbf{v})
+    (c_1 \mathbf{u}_1 + c_2 \mathbf{u}_2, \mathbf{v}) = c_1 (\mathbf{u}_1, \mathbf{v}) + c_2 (\mathbf{u}_2, \mathbf{v})
     \]</div>
 </li>
 </ul>
@@ -1206,11 +1208,11 @@ c_i = \frac{\int_{a}^{b} \phi_{i} \left ( x \right ) f \left ( x \right) dx }{\i
       </div>
     </a>
     <a class="right-next"
-       href="exercises/02_function_derivative_and_series_expansion.html"
+       href="09_fourier_series_expansion.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">第2回: 課題ファイル</p>
+        <p class="prev-next-title">第9回: フーリエ級数展開</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
